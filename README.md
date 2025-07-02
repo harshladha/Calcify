@@ -8,7 +8,6 @@ A clean, responsive calculator built with **HTML**, **CSS**, and **JavaScript**.
 
 - ✅ Light and Dark Themes
 - ✅ Smooth Button Animations
-- ✅ Sound Effects on Button Press
 - ✅ Keyboard Support
 - ✅ Local Calculation History (clears on page reload)
 - ✅ Mobile Responsive Design
