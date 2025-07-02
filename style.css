@@ -1,0 +1,238 @@
+/* Light Theme Variables */
+:root {
+  --bg: #f0f0f0;
+  --body: #ffffff;
+  --text: #222;
+  --display-bg: #eeeeee;
+  --display-text: #000000;
+  --btn-bg: #dddddd;
+  --btn-text: #000000;
+  --btn-accent: #4caf50;
+  --btn-danger: #f44336;
+}
+
+/* Dark Theme Variables */
+body.dark {
+  --bg: #121212;
+  --body: #1e1e1e;
+  --text: #f5f5f5;
+  --display-bg: #333333;
+  --display-text: #00ff00;
+  --btn-bg: #444444;
+  --btn-text: #f5f5f5;
+  --btn-accent: #4caf50;
+  --btn-danger: #f44336;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Title and toggle */
+#title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.theme-toggle {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* Toggle Button Styles */
+.toggle-button {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.toggle-button:hover {
+  background: var(--btn-accent);
+  color: #fff;
+}
+
+/* Calculator Body */
+.calculator-body {
+  width: 90%;
+  max-width: 340px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--body);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+}
+
+/* Display */
+.calculator-display {
+  width: 100%;
+  height: 60px;
+  font-size: 1.8rem;
+  background: var(--display-bg);
+  color: var(--display-text);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: right;
+  user-select: none;
+  box-sizing: border-box;
+  pointer-events: none;
+  cursor: default;
+  margin-bottom: 15px;
+  border: none;
+}
+
+/* Numpad */
+.numpad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.numpad button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px rgba(0,0,0,0.2);
+}
+
+
+.numpad button {
+  height: 60px;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  border: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px rgba(0,0,0,0.2);
+}
+
+.numpad button:hover {
+  filter: brightness(1.1);
+}
+
+.numpad button[data-value="="] {
+  background: var(--btn-accent);
+  color: white;
+}
+
+.numpad button[data-value="C"] {
+  background: var(--btn-danger);
+  color: white;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .calculator-body {
+    padding: 15px;
+  }
+
+  .numpad button {
+    height: 55px;
+    font-size: 1rem;
+  }
+
+  .calculator-display {
+    font-size: 1.4rem;
+    height: 50px;
+  }
+}
+
+.display-wrapper {
+  margin-bottom: 15px;
+}
+
+.calculator-history {
+  height: 24px;
+  font-size: 0.9rem;
+  text-align: right;
+  color: var(--text);
+  opacity: 0.7;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-list {
+  margin-top: 15px;
+  background: var(--display-bg);
+  color: var(--display-text);
+  padding: 10px;
+  border-radius: 10px;
+  max-height: 120px;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.history-list::-webkit-scrollbar {
+  width: 6px;
+}
+.history-list::-webkit-scrollbar-thumb {
+  background: var(--btn-bg);
+  border-radius: 3px;
+}
+
+.clear-history-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  border: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.clear-history-btn:hover {
+  background: var(--btn-hover);
+}
+
+.numpad button {
+  transition: transform 0.1s ease, background-color 0.2s;
+}
+
+.numpad button:active {
+  transform: scale(0.95);
+}
+
+.clear-history-btn {
+  transition: transform 0.1s ease, background-color 0.2s;
+}
+
+.clear-history-btn:active {
+  transform: scale(0.95);
+}
+
+.calculator-display {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.numpad button {
+  /* existing styles */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.history-list div {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
